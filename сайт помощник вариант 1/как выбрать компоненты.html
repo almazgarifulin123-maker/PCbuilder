@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Builder | Как выбрать совместимые компоненты</title>
+    
+    <!-- Шрифты и иконки -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="сайт помощник.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="logo">
+                    <i class="fas fa-microchip"></i>
+                    <span>PC<span class="highlight">Builder</span></span>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li><a href="помогатор.html#configurator" class="nav__link">Конфигуратор</a></li>
+                        <li><a href="совместимость.html" class="nav__link active">Совместимость</a></li>
+                        <li><a href="помогатор.html#guides" class="nav__link">Гайды</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header__actions">
+                    <a href="помогатор.html" class="btn btn--small btn--outline">
+                        <i class="fas fa-arrow-left"></i> Назад
+                    </a>
+                    <button class="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div style="margin-top: 120px; margin-bottom: 60px; background: white; padding: 40px; border-radius: 20px;">
+                <h1 style="font-size: 36px; margin-bottom: 30px; text-align: center; color: #2D3436;">Как выбрать совместимые компоненты</h1>
+                
+                <h2 style="font-size: 24px; margin: 30px 0 15px; color: #6C5CE7;">Главное правило: порядок выбора</h2>
+                <p>Эксперты советуют начинать подбор не с процессора или материнской платы, а с самого важного для ваших задач компонента.</p>
+                
+                <p>• <strong>Для игрового ПК:</strong> Начните с видеокарты. Она будет определять вашу производительность в играх и часто съедает львиную долю бюджета.</p>
+                <p>• <strong>Для рабочей станции:</strong> Если компьютер нужен для рендеринга, монтажа видео или сложных расчетов, начинайте с процессора.</p>
+                <p>• <strong>Для офисного/домашнего ПК:</strong> Можно начать с процессора со встроенной графикой.</p>
+                
+                <p>После того как вы определились с главным компонентом, подбирайте остальные "под него". Самый надежный путь выглядит так: <strong>Процессор → Материнская плата → Оперативная память → Охлаждение → Корпус → Блок питания.</strong></p>
+
+                <h2 style="font-size: 24px; margin: 40px 0 15px; color: #6C5CE7;">1. Сердце системы: Процессор и Материнская плата</h2>
+                <p>Это самая критичная точка совместимости. Здесь нужно проверить три вещи:</p>
+                
+                <h3 style="font-size: 18px; margin: 20px 0 10px;">Сокет (Socket):</h3>
+                <p>Это физический разъем на материнской плате, в который устанавливается процессор. У Intel и AMD они разные, и даже внутри одного бренда они меняются.</p>
+                <p><strong>Пример:</strong> Процессор AMD Ryzen 7000 требует сокет AM5, и его нельзя воткнуть в старую плату с сокетом AM4.</p>
+
+                <h3 style="font-size: 18px; margin: 20px 0 10px;">Чипсет (Chipset):</h3>
+                <p>Даже если сокет подходит, чипсет материнской платы определяет, какие функции будут доступны.</p>
+                <p>• Хотите разгонять процессор? Для Intel нужна плата на чипсете Z-серии (например, Z790), для AMD — B650 или X670.</p>
+                <p>• Для простого офисного ПК подойдут более простые и дешевые чипсеты (H610 для Intel, A620 для AMD).</p>
+
+                <h3 style="font-size: 18px; margin: 20px 0 10px;">Версия BIOS:</h3>
+                <p>Это подводный камень. Даже с правильным сокетом материнская плата может не работать с новым процессором "из коробки", если она была выпущена до выхода этого CPU. На сайте производителя платы всегда есть список совместимости (CPU Support List) и версия BIOS, необходимая для работы с конкретным камнем. Ищите платы с функцией USB Flashback, которая позволяет обновить BIOS без установки процессора.</p>
+
+                <h2 style="font-size: 24px; margin: 40px 0 15px; color: #6C5CE7;">2. Кратковременная память: Оперативная память (RAM)</h2>
+                <p>Здесь все проще, но есть нюансы.</p>
+                
+                <h3 style="font-size: 18px; margin: 20px 0 10px;">Тип памяти (DDR):</h3>
+                <p>Главное правило — не перепутать поколение. Материнская плата под DDR4 не примет планку DDR5, и наоборот.</p>
+
+                <h3 style="font-size: 18px; margin: 20px 0 10px;">Частота и объем:</h3>
+                <p>Материнская плата и процессор имеют ограничения по максимальной частоте и объему памяти. Если вы купите слишком быструю память, она будет работать на меньшей скорости, либо не запустится вовсе. Проверьте спецификации на сайте производителя платы.</p>
+
+                <h3 style="font-size: 18px; margin: 20px 0 10px;">Двухканальный режим:</h3>
+                <p>Для максимальной производительности всегда лучше брать две планки памяти, а не одну. Устанавливать их нужно в определенные слоты на материнской плате (обычно 2-й и 4-й, если считать от процессора), чтобы включился двухканальный режим.</p>
+
+                <h2 style="font-size: 24px; margin: 40px 0 15px; color: #6C5CE7;">3. Прожорливый гигант: Видеокарта и Блок питания (БП)</h2>
+                <p>Видеокарта — самый энергопотребляемый компонент, поэтому к ее "кормлению" нужно подойти ответственно.</p>
+                
+                <h3 style="font-size: 18px; margin: 20px 0 10px;">Мощность блока питания:</h3>
+                <p>Недостаточно просто купить мощный БП. Нужно рассчитать потребление.</p>
+                <p>• Сложите TDP (теплопакет) процессора и видеокарты.</p>
+                <p>• Прибавьте к этому 100–150 Вт на остальные компоненты (материнская плата, диски, вентиляторы).</p>
+                <p>• Добавьте запас 20–30%. Например, если сборка "ест" 400 Вт, берите БП на 500–550 Вт.</p>
+
+                <h3 style="font-size: 18px; margin: 20px 0 10px;">Разъемы питания:</h3>
+                <p>Современные мощные видеокарты (например, NVIDIA RTX 40-й серии) требуют не старые 8-pin, а новый 16-pin разъем (12VHPWR). Убедитесь, что в комплекте с вашим БП есть нужные кабели или что он совместим с переходником из коробки видеокарты.</p>
+
+                <h3 style="font-size: 18px; margin: 20px 0 10px;">Качество БП:</h3>
+                <p>Никогда не экономьте на блоке питания. Дешевый БП без сертификата 80 Plus может не выдать заявленную мощность и сгореть сам, прихватив с собой видеокарту или материнскую плату.</p>
+
+                <h2 style="font-size: 24px; margin: 40px 0 15px; color: #6C5CE7;">4. "Одежда" и "Обувь": Корпус и охлаждение</h2>
+                <p>Компоненты должны физически поместиться внутрь корпуса. Это частая ошибка новичков.</p>
+                
+                <h3 style="font-size: 18px; margin: 20px 0 10px;">Форм-фактор материнской платы:</h3>
+                <p>Корпуса бывают разных размеров (Full Tower, Midi Tower, Mini Tower). Убедитесь, что ваш корпус поддерживает размер вашей материнской платы (E-ATX, ATX, Micro-ATX).</p>
+
+                <h3 style="font-size: 18px; margin: 20px 0 10px;">Длина видеокарты:</h3>
+                <p>Мощные карты могут быть очень длинными (34 см и более). В характеристиках корпуса всегда указана максимальная допустимая длина видеокарты.</p>
+
+                <h3 style="font-size: 18px; margin: 20px 0 10px;">Высота кулера процессора:</h3>
+                <p>Огромные башенные кулеры могут не закрыться крышкой. Проверьте максимальную высоту кулера для вашего корпуса.</p>
+
+                <h3 style="font-size: 18px; margin: 20px 0 10px;">TDP кулера:</h3>
+                <p>TDP (тепловыделение) вашего кулера должно быть выше, чем TDP процессора, а лучше с запасом 20–30%. На мощный процессор (например, Intel Core i7/i9 или AMD Ryzen 9) ставьте массивный башенный кулер или систему водяного охлаждения (СЖО).</p>
+
+                <h2 style="font-size: 24px; margin: 40px 0 15px; color: #6C5CE7;">5. Полезные инструменты для проверки</h2>
+                <p>Чтобы не проверять всё вручную, пользуйтесь онлайн-помощниками:</p>
+                
+                <p>• <strong>PCPartPicker:</strong> Самый популярный зарубежный сервис. Вы собираете конфигурацию, а он автоматически предупреждает о возможных конфликтах.</p>
+                <p>• <strong>Сайты производителей:</strong> Всегда сверяйтесь с официальными CPU Support List на сайте производителя материнской платы и QVL (списком протестированной памяти).</p>
+                <p>• <strong>Конфигураторы магазинов:</strong> На сайтах типа DNS или Citilink есть удобные конфигураторы, которые часто отсеивают несовместимые позиции. Это отличный способ быстро набросать рабочий вариант и сразу увидеть цену.</p>
+                <p>• <strong>YouTube и обзоры:</strong> Если вы собрали конфигурацию, просто забейте в поиск "процессор X + видеокарта Y тест". Вы увидите реальную производительность этой связки в играх и задачах, что поможет оценить сбалансированность сборки.</p>
+
+                <div style="background: #f0f4f8; border-left: 4px solid #6C5CE7; padding: 20px; margin: 30px 0; border-radius: 8px;">
+                    <p style="margin: 0; font-weight: 500;"> <strong>Итог:</strong> Не торопитесь с покупками. Составьте список, пройдитесь по каждой точке совместимости и перепроверьте все размеры. Лучше потратить лишний день на проверку, чем потом месяц ждать замену или пытаться впихнуть невпихуемое.</p>
+                </div>
+                
+                <p style="font-size: 20px; font-weight: 700; text-align: center; margin-top: 40px; color: #6C5CE7;">Удачной и совместимой сборки! </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <div class="logo">
+                        <i class="fas fa-microchip"></i>
+                        <span>PC<span class="highlight">Builder</span></span>
+                    </div>
+                    <p>Помогаем собрать компьютер с 2025 года</p>
+                </div>
+                
+                <div class="footer__links">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="помогатор.html#configurator">Конфигуратор</a></li>
+                        <li><a href="совместимость.html">Совместимость</a></li>
+                        <li><a href="помогатор.html#guides">Гайды</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__social">
+                    <h4>Мы в соцсетях</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 PCBuilder.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Кнопка наверх
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

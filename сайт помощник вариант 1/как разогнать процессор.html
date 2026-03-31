@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Builder | Как разогнать процессор?</title>
+    
+    <!-- Шрифты и иконки -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="сайт помощник.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="logo">
+                    <i class="fas fa-microchip"></i>
+                    <span>PC<span class="highlight">Builder</span></span>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li><a href="помогатор.html#configurator" class="nav__link">Конфигуратор</a></li>
+                        <li><a href="разгон.html" class="nav__link active">Разгон</a></li>
+                        <li><a href="помогатор.html#compatibility" class="nav__link">Совместимость</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header__actions">
+                    <a href="помогатор.html" class="btn btn--small btn--outline">
+                        <i class="fas fa-arrow-left"></i> Назад
+                    </a>
+                    <button class="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div style="margin-top: 120px; margin-bottom: 60px; background: white; padding: 40px; border-radius: 20px;">
+                <h1 style="font-size: 36px; margin-bottom: 30px; text-align: center; color: #2D3436;">Как разогнать процессор</h1>
+                
+                <h2 style="font-size: 24px; margin: 30px 0 15px; color: #6C5CE7;">Вариант 1: Разгон через программу в Windows (Самый простой и наглядный)</h2>
+                <p>Этот способ идеально подходит для новичков. Ты сидишь в привычной Windows, крутишь ползунки и сразу видишь результат. Не нужно перезагружаться и входить в BIOS после каждого изменения.</p>
+                
+                <h3 style="font-size: 18px; margin: 20px 0 10px;">Для процессоров Intel:</h3>
+                <p>Лучший выбор — официальная утилита <strong>Intel® Extreme Tuning Utility (Intel® XTU)</strong>. Она работает только с разблокированными процессорами (с индексом K и X).</p>
+                
+                <h4 style="font-size: 16px; margin: 15px 0 5px; font-weight: 600;">Что нужно сделать:</h4>
+                <p>• Скачай и установи Intel XTU с официального сайта Intel.</p>
+                <p>• Если у тебя процессор K-серии, перед первым запуском зайди в настройки Windows, открой «Безопасность Windows» -> «Безопасность устройства» -> «Изоляция ядра» и отключи параметр «Целостность памяти». Это необходимо для работы XTU.</p>
+                <p>• Запусти XTU. Ты увидишь графики и основные параметры. Нас интересует ползунок <strong>«Processor Core Ratio»</strong> (множитель). Увеличивай его понемногу.</p>
+                <p>• Рядом есть ползунок <strong>«Processor Core Voltage»</strong> (напряжение). Его тоже можно поднимать маленькими шагами (например, по 0.05 В), если система становится нестабильной, но следи за температурами.</p>
+                <p>• В XTU уже встроены тесты, чтобы сразу проверить стабильность после изменений.</p>
+
+                <h3 style="font-size: 18px; margin: 25px 0 10px;">Для процессоров AMD:</h3>
+                <p>Официальное решение — утилита <strong>AMD Ryzen Master</strong>. Она дает очень гибкие настройки, включая автоматический разгон и ручной по ядрам.</p>
+                
+                <h4 style="font-size: 16px; margin: 15px 0 5px; font-weight: 600;">Что нужно сделать:</h4>
+                <p>• Скачай и установи Ryzen Master с сайта AMD.</p>
+                <p>• Запусти программу. В режиме «Basic View» ты можешь просто включить автоматический разгон (Auto OC) или использовать пресеты.</p>
+                <p>• Для ручного управления переключись в «Advanced View». Там ты сможешь менять частоту и напряжение так же, как в XTU.</p>
+
+                <h3 style="font-size: 18px; margin: 25px 0 10px;">Старые, но рабочие варианты:</h3>
+                <p>Существуют и сторонние программы, например, ClockGen, которая позволяет менять частоты прямо в Windows, изменяя системную шину. Однако для современных процессоров и материнских плат лучше использовать софт от производителя (XTU и Ryzen Master), так как они понимают особенности железа. Также для базового мониторинга и ручного управления можно использовать ThrottleStop, но он больше подходит для настройки ноутбуков.</p>
+
+                <h2 style="font-size: 24px; margin: 40px 0 15px; color: #6C5CE7;">Вариант 2: Автоматический и полуавтоматический разгон через BIOS</h2>
+                <p>BIOS — это базовая система, которая запускается до Windows. Разгон через BIOS считается более надежным и стабильным, так как настройки применяются на самом низком уровне. Но не пугайся: тебе не обязательно лезть в ручное управление множителем и напряжением. В современных BIOS есть умные автофункции.</p>
+
+                <h3 style="font-size: 18px; margin: 20px 0 10px;">Для материнских плат ASUS (AI Overclocking):</h3>
+                <p>Если у тебя материнка от ASUS, это твой выбор. Функция AI Overclocking анализирует твой конкретный процессор и систему охлаждения, а затем сама подбирает оптимальные безопасные настройки для разгона.</p>
+                
+                <h4 style="font-size: 16px; margin: 15px 0 5px; font-weight: 600;">Как включить:</h4>
+                <p>• Войти в BIOS (при загрузке нажимать Del или F2).</p>
+                <p>• Нажать F7 для перехода в расширенный режим.</p>
+                <p>• Найти и включить функцию AI Overclocking. Ее можно включить и через фирменную программу AI Suite 3 прямо из Windows.</p>
+
+                <h3 style="font-size: 18px; margin: 25px 0 10px;">Для процессоров Intel (Intel 200S Boost):</h3>
+                <p>На новых платформах (с Intel Core Ultra 200S и материнской платой Z890) есть функция Intel 200S Boost. Это предварительно настроенный профиль разгона, который активируется в BIOS и повышает производительность в играх.</p>
+
+                <h3 style="font-size: 18px; margin: 25px 0 10px;">Ручной режим для начинающих:</h3>
+                <p>Если хочешь попробовать ручной разгон через BIOS, делай это по науке:</p>
+                <p>• Войди в BIOS и найди раздел с настройками частоты (обычно AI Tweaker, OC, или Performance).</p>
+                <p>• Найди параметр CPU Core Ratio (множитель). Увеличь его на единицу.</p>
+                <p>• Сохрани изменения (F10), перезагрузись и протестируй стабильность в Windows программой вроде Prime95. Следи за температурами через HWiNFO64 или CoreTemp.</p>
+                <p>• Если все стабильно — повтори. Если компьютер завис или выдал синий экран — чуть подними напряжение CPU Core Voltage, но делай это маленькими шагами (по 0.05 В) и следи за нагревом.</p>
+
+                <h2 style="font-size: 24px; margin: 40px 0 15px; color: #6C5CE7;">Что выбрать?</h2>
+                <p> <strong>Если ты новичок и хочешь просто «сделать побыстрее»:</strong> Скачай Intel XTU (для Intel) или AMD Ryzen Master (для AMD). Это самый безопасный и понятный способ. Ты всегда сможешь сбросить настройки в программе, если что-то пойдет не так.</p>
+                <p> <strong>Если хочешь включить разгон и забыть:</strong> Зайди в BIOS и активируй AI Overclocking (для ASUS) или аналогичные функции от других производителей (Gigabyte, MSI). Они часто называются «Performance Enhancer» или что-то подобное.</p>
+                <p> <strong>Если хочешь почувствовать себя настоящим оверклокером:</strong> Тогда тебе прямая дорога в ручной режим BIOS. Но помни: это требует терпения и постоянного контроля температур.</p>
+
+                <div style="background: #f0f4f8; border-left: 4px solid #6C5CE7; padding: 20px; margin: 30px 0; border-radius: 8px;">
+                    <p style="margin: 0; font-weight: 500;"> <strong>Главное правило любого разгона:</strong> не торопись, меняй параметры по чуть-чуть и всегда следи за температурой процессора. Если градус под нагрузкой подбирается к 90-95°C и выше — остановись, это предел для безопасной работы.</p>
+                </div>
+                
+                <p style="font-size: 20px; font-weight: 700; text-align: center; margin-top: 40px; color: #6C5CE7;">Удачного и безопасного разгона! </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <div class="logo">
+                        <i class="fas fa-microchip"></i>
+                        <span>PC<span class="highlight">Builder</span></span>
+                    </div>
+                    <p>Помогаем собрать компьютер с 2025 года</p>
+                </div>
+                
+                <div class="footer__links">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="помогатор.html#configurator">Конфигуратор</a></li>
+                        <li><a href="разгон.html">Разгон</a></li>
+                        <li><a href="помогатор.html#compatibility">Совместимость</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__social">
+                    <h4>Мы в соцсетях</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 PCBuilder.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Кнопка наверх
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

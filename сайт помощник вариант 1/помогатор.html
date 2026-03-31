@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Builder | Собери свой компьютер</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="сайт помощник.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="logo">
+                    <i class="fas fa-microchip"></i>
+                    <span>PC<span class="highlight">Builder</span></span>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li><a href="#configurator" class="nav__link active">Конфигуратор</a></li>
+                        <li><a href="#guides" class="nav__link">Гайды</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header__actions">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        Собери компьютер своей мечты
+                    </h1>
+                    <p class="hero__subtitle">
+                        Простой конфигуратор с проверкой совместимости. 
+                    </p>
+                    <div class="hero__stats">
+                        <div class="stat-item">
+                            <span class="stat-number">100</span>
+                            <span class="stat-label">Комплектующих</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Совместимых сборок</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="configurator" class="configurator">
+            <div class="container">
+                <div class="configurator__header">
+                    <h2 class="section-title">Конфигуратор ПК</h2>
+                    <div class="configurator__tabs">
+                        <button class="tab-btn active" data-tab="all">Все комплектующие</button>
+                        <button class="tab-btn" data-tab="compatible">Только совместимые</button>
+                    </div>
+                </div>
+                <div class="configurator__grid">
+                    <div class="components-sidebar">
+                        <div class="components-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Поиск комплектующих..." id="searchComponents">
+                        </div>
+
+                        <div class="components-categories">
+                            <button class="category-btn active" data-category="cpu">
+                                <i class="fas fa-microchip"></i>
+                                Процессор
+                            </button>
+                            <button class="category-btn" data-category="gpu">
+                                <i class="fas fa-tv"></i>
+                                Видеокарта
+                            </button>
+                            <button class="category-btn" data-category="motherboard">
+                                <i class="fas fa-server"></i>
+                                Материнская плата
+                            </button>
+                            <button class="category-btn" data-category="ram">
+                                <i class="fas fa-memory"></i>
+                                Оперативная память
+                            </button>
+                            <button class="category-btn" data-category="storage">
+                                <i class="fas fa-hdd"></i>
+                                Накопитель
+                            </button>
+                            <button class="category-btn" data-category="psu">
+                                <i class="fas fa-bolt"></i>
+                                Блок питания
+                            </button>
+                            <button class="category-btn" data-category="case">
+                                <i class="fas fa-computer"></i>
+                                Корпус
+                            </button>
+                            <button class="category-btn" data-category="cooler">
+                                <i class="fas fa-fan"></i>
+                                Охлаждение
+                            </button>
+                        </div>
+                        <div class="components-list" id="componentsList">
+                        </div>
+                    </div>
+                    <div class="build-area">
+                        <h3 class="build-area__title">Твоя сборка</h3>
+                        
+                        <div class="build-summary">
+                            <div class="build-stats">
+                                <div class="build-stat">
+                                    <span class="build-stat__label">Общая стоимость:</span>
+                                    <span class="build-stat__value" id="totalPrice">0 ₽</span>
+                                </div>
+                                <div class="build-stat">
+                                    <span class="build-stat__label">Совместимость:</span>
+                                    <span class="build-stat__value compatibility-badge" id="compatibilityStatus">
+                                        <i class="fas fa-check-circle"></i> OK
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="build-components" id="buildComponents">
+                            <div class="build-component empty" data-category="cpu">
+                                <div class="build-component__info">
+                                    <i class="fas fa-microchip"></i>
+                                    <span>Процессор не выбран</span>
+                                </div>
+                                <button class="btn-add" onclick="selectCategory('cpu')">
+                                    <i class="fas fa-plus"></i> Выбрать
+                                </button>
+                            </div>
+
+                            <div class="build-component empty" data-category="gpu">
+                                <div class="build-component__info">
+                                    <i class="fas fa-tv"></i>
+                                    <span>Видеокарта не выбрана</span>
+                                </div>
+                                <button class="btn-add" onclick="selectCategory('gpu')">
+                                    <i class="fas fa-plus"></i> Выбрать
+                                </button>
+                            </div>
+
+                            <div class="build-component empty" data-category="motherboard">
+                                <div class="build-component__info">
+                                    <i class="fas fa-server"></i>
+                                    <span>Материнская плата не выбрана</span>
+                                </div>
+                                <button class="btn-add" onclick="selectCategory('motherboard')">
+                                    <i class="fas fa-plus"></i> Выбрать
+                                </button>
+                            </div>
+
+                            <div class="build-component empty" data-category="ram">
+                                <div class="build-component__info">
+                                    <i class="fas fa-memory"></i>
+                                    <span>Оперативная память не выбрана</span>
+                                </div>
+                                <button class="btn-add" onclick="selectCategory('ram')">
+                                    <i class="fas fa-plus"></i> Выбрать
+                                </button>
+                            </div>
+
+                            <div class="build-component empty" data-category="storage">
+                                <div class="build-component__info">
+                                    <i class="fas fa-hdd"></i>
+                                    <span>Накопитель не выбран</span>
+                                </div>
+                                <button class="btn-add" onclick="selectCategory('storage')">
+                                    <i class="fas fa-plus"></i> Выбрать
+                                </button>
+                            </div>
+
+                            <div class="build-component empty" data-category="psu">
+                                <div class="build-component__info">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>Блок питания не выбран</span>
+                                </div>
+                                <button class="btn-add" onclick="selectCategory('psu')">
+                                    <i class="fas fa-plus"></i> Выбрать
+                                </button>
+                            </div>
+
+                            <div class="build-component empty" data-category="case">
+                                <div class="build-component__info">
+                                    <i class="fas fa-computer"></i>
+                                    <span>Корпус не выбран</span>
+                                </div>
+                                <button class="btn-add" onclick="selectCategory('case')">
+                                    <i class="fas fa-plus"></i> Выбрать
+                                </button>
+                            </div>
+
+                            <div class="build-component empty" data-category="cooler">
+                                <div class="build-component__info">
+                                    <i class="fas fa-fan"></i>
+                                    <span>Охлаждение не выбрано</span>
+                                </div>
+                                <button class="btn-add" onclick="selectCategory('cooler')">
+                                    <i class="fas fa-plus"></i> Выбрать
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="build-actions">
+                            <button class="btn btn--primary" id="checkCompatibility">
+                                <i class="fas fa-check-circle"></i> Проверить совместимость
+                            </button>
+                            <button class="btn btn--outline" onclick="window.location.reload()">
+                                <i class="fas fa-trash"></i> Очистить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="guides" class="guides">
+            <div class="container">
+                <h2 class="section-title">Гайды по сборке</h2>
+                <div class="guides__grid">
+                    <div class="guide-card">
+                        <i class="fas fa-tools guide-card__icon"></i>
+                        <h3>Как собрать ПК самостоятельно</h3>
+                        <p>Пошаговое руководство для новичков</p>
+                        <a href="как собрать пк.html" class="guide-card__link">Читать <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="guide-card">
+                        <i class="fas fa-balance-scale guide-card__icon"></i>
+                        <h3>Как выбрать совместимые компоненты</h3>
+                        <p>Все о сокетах, чипсетах и разъемах</p>
+                        <a href="как выбрать компоненты.html" class="guide-card__link">Читать <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="guide-card">
+                        <i class="fas fa-tachometer-alt guide-card__icon"></i>
+                        <h3>Как разогнать процессор</h3>
+                        <p>Увеличиваем производительность</p>
+                        <a href="как разогнать процессор.html" class="guide-card__link">Читать <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <div class="logo">
+                        <i class="fas fa-microchip"></i>
+                        <span>PC<span class="highlight">Builder</span></span>
+                    </div>
+                    <p>Помогаем собрать компьютер с 2025 года</p>
+                </div>
+                
+                <div class="footer__links">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="#configurator">Конфигуратор</a></li>
+                        <li><a href="#guides">Гайды</a></li>
+                        <li><a href="#compatibility">Совместимость</a></li>
+                    </ul>
+                </div>           
+            <div class="footer__bottom">
+                <p>&copy; 2025 PCBuilder.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="configurator.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
